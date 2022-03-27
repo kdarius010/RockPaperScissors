@@ -1,33 +1,45 @@
 let computerPlay = () => {
-    const pick = ["Rock", "Paper", "Scissors"];
+    const pick = ["rock", "paper", "scissors"];
     const random = Math.floor(Math.random() * pick.length);
-    return (pick[random]);
+    return pick[random];
 }
 
-let playerSelection = () => {
-    selection = prompt("Rock, Paper, or Scissors : ");
+let playerPlay = () => {
+    let selection = prompt("Pick Rock, Paper, or Scissors: ");
+    let newSelection = selection.toLowerCase();
+    return newSelection;
 }
+
 
 let playRound = (playerSelection, computerSelection) => {
-    if (playerSelection == "Rock" && computerSelection == "Paper") {
-        alert(`Computer selected ${computerSelection}. You Lose!`);
+    const won = alert(`Computer selected ${computerSelection}. You win!`);
+    const lose = alert (`Computer selected ${computerSelection}. You Lose!`);
+    if (playerSelection == "scissors" && computerSelection == "paper") {
+        return won;
     }
-    else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-        alert(`Computer selected ${computerSelection}. You Win!`);
+    else if (playerSelection == "rock" && computerSelection == "scissors") {
+        return won;
     }
-    else if (playerSelection == "Paper" && computerSelection == "Rock") {
-        alert(`Computer selected ${computerSelection}. You Win!`);
+    else if (playerSelection == "paper" && computerSelection == "rock") {
+        return won;
     }
-    else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-        alert(`Computer selected ${computerSelection}. You Lose!`);
+    else if (playerSelection == "paper" && computerSelection == "scissors") {
+        return lose;
     }
-    else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-        alert (`Computer selected ${computerSelection}. You Lose!`);
+    else if (playerSelection == "scissors" && computerSelection == "rock") {
+        return lose;
     }
-    else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-        alert (`Computer selected ${computerSelection}. You Win!`);
+    else if (playerSelection == "rock" && computerSelection == "paper")  {
+        return lose;
     }
     else if (playerSelection == computerSelection) {
-        alert ("Draw. Try again");
+        return alert ("Draw. Try again");
     }
 }
+
+/* let game = rounds => {
+    for (let i = 0; )i < 5; i++){
+        
+        }
+    }
+} */
